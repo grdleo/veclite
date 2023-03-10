@@ -65,3 +65,40 @@ class Vec:
             self.els[idx] = val
         else:
             raise TypeError("Given element not compatible with vector's units!")
+
+class Vec2(Vec):
+    def __init__(*args, **kwargs):
+        units = U_(NODIM)
+        try:
+            units = kwargs["units"]
+            del kwargs["units"]
+        except:
+            pass
+
+        if len(kwargs) == 0:
+            if len(args) != 2:
+                raise ValueError("Two arguments please!")
+            super().__init__(args, units=units)
+        elif len(args) == 0:
+            try:
+                super().__init__(kwargs["x"], kwargs["y"], units=units)
+            except KeyError:
+                raise ValueError("'x' and 'y' needed for kwargs!")
+        else:
+            raise ValueError("args OR kwargs, not both!")
+
+    @property
+    def x(self) -> Value:
+        return self[0]
+    
+    @x.setter
+    def x(self, val: Value):
+        self[0] = val
+    
+    @property
+    def y(self) -> Value:
+        return self[1]
+    
+    @y.setter
+    def y(self, val: Value):
+        self[1] = val
