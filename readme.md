@@ -1,0 +1,1 @@
+# Veclite: yet another pure Python package for vectors & matrices calculations

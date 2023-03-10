@@ -1,0 +1,17 @@
+[project]
+name = "veclite_grdleo"
+version = "0.0.1"
+authors = [
+  { name="Léo G.", email="contact@leog.dev" },
+]
+description = "another pure Python package for vectors & matrices calculations"
+readme = "readme.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/grdleo/veclite"
